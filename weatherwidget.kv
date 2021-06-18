@@ -1,0 +1,63 @@
+<WeatherTestLayout>:
+    orientation: 'vertical'
+    on_touch_down:
+        self.ids.wdgt1.download_current_weather(city = 'Nassau,bs')
+        self.ids.wdgt1.download_forecast(city  = 'Nassau,bs')
+    WeatherWidget:
+        id: wdgt1
+        
+<WeatherWidget>:
+    Label:
+        id: lbl1
+        text: root.city + ' ' + root.country
+        font_size: 50
+        size_hint: 1, .25
+        pos_hint: {'top':1, 'left':1}
+    AsyncImage:
+        id: img1
+        source: root.image_source
+        allow_stretch: True
+        keep_ratio: True
+        size_hint: .25, .25
+        pos_hint: {'top':.75, 'left':1}
+    Label:
+        id: lbl2
+        text: root.temperature + u' \xb0C'
+        font_size: 50
+        size_hint: .25, .25
+        pos_hint: {'top':.75, 'x':.25}
+    Label:
+        id: lbl3
+        text: root.humidity + ' %rH'
+        font_size: 25
+        size_hint: .25, .125
+        pos_hint: {'top':.75, 'x':.5}
+    Label:
+        id: lbl4
+        text: root.pressure + ' hPa'
+        font_size: 25
+        size_hint: .25, .125
+        pos_hint: {'top':.75, 'x':.75}
+    Label:
+        id: lbl5
+        text: root.wind_speed + ' m/s'
+        font_size: 25
+        size_hint: .25, .125
+        pos_hint: {'top':.625, 'x':.5}
+    Label:
+        id: lbl6
+        text: root.wind_direction + u' \xb0'
+        font_size: 25
+        size_hint: .25, .125
+        pos_hint: {'top':.625, 'x':.75}
+    ScrollView:
+        size_hint: 1, .5
+        pos_hint: {'top': .5, 'left': 1}
+        id: scroll
+        GridLayout:
+            id: grid
+            size_hint: 1, None
+            height: self.minimum_height
+            cols: 3
+            row_force_default: True
+            row_default_height: 40
