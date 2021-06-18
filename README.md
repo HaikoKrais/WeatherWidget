@@ -1,5 +1,6 @@
 # Weather-App
-Simple weather App. Visualization in Python Kivy and data from the OpenWeatherMap API
+Simple weather App. Visualization in Python Kivy and data from the OpenWeatherMap API.
+The App runs asynchronously, non blocking.
 
 ![image](https://user-images.githubusercontent.com/62139258/122603456-a5b7c500-d074-11eb-834e-aa9c620f258f.png)
 
